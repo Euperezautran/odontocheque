@@ -1,0 +1,26 @@
+.card-general {
+  position: absolute;
+  margin: auto 0;
+
+  /* Gris claro */
+
+  background: #EFEFEF;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.12);
+  border-radius: 15px;
+}
+
+.text-with-margin {
+  margin-top: 80px;
+}
+
+
+.card-bienvenido {
+  width: 400px;
+  height: 500px;
+}
+
+.card-usuario {
+  width: 257px;
+  height: 279px;
+  padding: 20px;
+}

@@ -35,11 +35,6 @@ ActiveRecord::Schema.define(version: 2021_01_20_201410) do
     t.index ["brand_id"], name: "index_products_on_brand_id"
   end
 
-  create_table "registrations", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

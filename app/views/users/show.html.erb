@@ -1,14 +1,28 @@
+
+<nav class="navbar navbar-light bg-light fondo-violeta d-flex justify-content-center">
+    <%= image_tag "logo_odontocheques_blanco.png" %>
+</nav>
+
 <div class="container my-5 py-5 ">
-  <div class="row col-12 justify-content-center">
-    <div class="d-flex">
-        <div class="text-center border border-ligth w-50  shadow-sm p-3 mb-5 bg-white rounded">
-          <h1> Bienvenido <%= @user.username.capitalize %></h1>
-          <h3><%=@user.first_name.capitalize %> <%=@user.last_name.capitalize %></h3>
+
+  <div class="row ">
+
+    <div class="col-12 col-lg-5 ">
+
+        <div class="card-general card-usuario">
+          <%= image_tag "icon_odontologo.png" %>
+          <div class="" >
+            <h4> Bienvenido <%= @user.first_name.capitalize;  %></h4>
+          </div>
+          <p><%=@user.first_name.capitalize %> <%=@user.last_name.capitalize %></p>
           <p>Matricula número : <%=@user.registration_number %></p>
           <p><%=@user.province.capitalize %></p>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
         </div>
-        <div class="mx-5 p-5 border border-ligth w-50  shadow-sm p-3 mb-5 bg-white rounded">
+        <div class=""></div>
+
+    </div>
+    <div class="col-12 col-lg-7">
         <div>
           <h2 class="text-center mb-5">Elija una marca</h2>
         </div>
@@ -19,6 +33,8 @@
             </span>
              <% end %>
         </div>
+    </div>
+
     </div>
   </div>
 </div>
