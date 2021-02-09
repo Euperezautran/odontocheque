@@ -1,0 +1,23 @@
+<div class="card-general card-usuario mb-5">
+  <div class="div">
+    <%= image_tag "icon_odontologo.png" %>
+  </div>
+  <div class="" >
+    <h5> Bienvenido <%= @user.first_name.capitalize;  %></h5>
+  </div>
+  <div class="">
+    <div><span><%=@user.first_name.capitalize %> <%=@user.last_name.capitalize%></span></div>
+    <div><span>Matricula: <%=@user.registration_number %></span></div>
+    <div><span><%=@user.province.capitalize %></span></div>
+  </div>
+</div>
+ <!-- card cheques restantes -->
+<div class="card-general card-cantidad-cheques my-5">
+  <div>
+    <p>Cheques restantes para este mes:</p>
+  </div>
+</div>
+  <!-- boton de deslogueo -->
+<div>
+  <%= link_to "cerrar cesion", destroy_user_session_path, method: :delete, class: "btn btn-cerrar-cesion" %>
+</div>

@@ -9,4 +9,5 @@ class BrandsController < ApplicationController
     @brand = Brand.find(params[:id])
   end
 
+
 end

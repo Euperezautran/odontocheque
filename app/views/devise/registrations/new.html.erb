@@ -1,58 +1,58 @@
+<div class="fondo-2">
 
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="card-general card-registro col-md-6 py-5 my-5">
+        <h2 class="text-center">Registrarse</h2>
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-6 py-5">
-      <h2 class="text-center">Registrarse</h2>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
 
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
+          <div class="form-inputs">
+            <%= f.input :username, label: 'nombre de usuario',
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "username" }%>
+            <%= f.input :first_name, label: 'nombre',
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "first_name" }%>
+            <%= f.input :last_name, label: 'apellido',
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "last_name" }%>
+            <%= f.input :province, label: 'Provincia',
+                        collection: User::PROVINCES,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "provincia" }%>
+            <%= f.input :registration_number, label: 'Matricula',
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "registration_number" }%>
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" }%>
+            <%= f.input :password, label: 'contraseña',
+                        required: true,
+                        hint: ("#{@minimum_password_length} caracteres minimo" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation, label: 'confirmar contraseña',
+                        required: true,
+                        input_html: { autocomplete: "new-password" } %>
+          </div>
 
-        <div class="form-inputs">
-          <%= f.input :username, label: 'nombre de usuario',
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "username" }%>
-          <%= f.input :first_name, label: 'nombre',
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "first_name" }%>
-          <%= f.input :last_name, label: 'apellido',
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "last_name" }%>
-          <%= f.input :province, label: 'Provincia',
-                      collection: User::PROVINCES,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "provincia" }%>
-          <%= f.input :registration_number, label: 'Matricula',
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "registration_number" }%>
-          <%= f.input :email,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "email" }%>
-          <%= f.input :password, label: 'contraseña',
-                      required: true,
-                      hint: ("#{@minimum_password_length} caracteres minimo" if @minimum_password_length),
-                      input_html: { autocomplete: "new-password" } %>
-          <%= f.input :password_confirmation, label: 'confirmar contraseña',
-                      required: true,
-                      input_html: { autocomplete: "new-password" } %>
-        </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Enviar" %>
 
-        <div class="form-actions">
-          <%= f.button :submit, "Enviar" %>
-
-        </div>
-      <% end %>
-      <%= render "devise/shared/links" %> <br>
-      <%= link_to "Volver", root_path %>
+          </div>
+        <% end %>
+        <%= render "devise/shared/links" %> <br>
+        <%= link_to "Volver", root_path %>
+      </div>
     </div>
   </div>
 </div>
-
 
 

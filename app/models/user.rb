@@ -27,6 +27,6 @@ class User < ApplicationRecord
     users = User.where(registration_number: registration_number)  # users con el mismo registration number
     # [User[registration_number: 1, province: "CABA"], User[registration_number: 1, province: "Cordoba"]]
     repetido = users.any? { |user| user.national? == national? }
-    errors.add(:registration_number, "ta shepetido") if repetido
+    errors.add(:registration_number, "numero invalido") if repetido
   end
 end

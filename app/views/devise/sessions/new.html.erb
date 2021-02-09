@@ -1,32 +1,45 @@
-
+<nav class="navbar navbar-light bg-light fondo-violeta d-flex justify-content-center pb-1 mb-5">
+    <%= image_tag "logo_odontocheques_blanco.png" %>
+</nav>
 
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-md-6">
-      <h2>Iniciar Sesión</h2>
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-inputs">
-          <%= f.input :username, label: 'nombre de usuario',
-                      required: true,
-                      autofocus: true,
-          input_html: { autocomplete: "username" }%>
-          <%= f.input :email,
-                      required: false,
-                      autofocus: true,
-                      input_html: { autocomplete: "email" } %>
-          <%= f.input :password, label: 'contraseña',
-                      required: false,
-                      input_html: { autocomplete: "current-password" } %>
-          <%= f.input :remember_me, label: 'recordar contraseña', as: :boolean if devise_mapping.rememberable? %>
-        </div>
+    <div class="card-general card-inicio-sesion col-md-6 text-center">
+      <div class="div">
+        <%= image_tag "icon_odontologo.png" %>
+      </div>
+      <div class="div">
+        <h2>Iniciar Sesión</h2>
+      </div>
+      <div class="div">
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :username, label: 'nombre de usuario',
+                        required: true,
+                        autofocus: true,
+            input_html: { autocomplete: "username" }%>
+            <%= f.input :email,
+                        required: false,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" } %>
+            <%= f.input :password, label: 'contraseña',
+                        required: false,
+                        input_html: { autocomplete: "current-password" } %>
+            <%= f.input :remember_me, label: 'recordar contraseña', as: :boolean if devise_mapping.rememberable? %>
+          </div>
 
-        <div class="form-actions">
-          <%= f.button :submit, "Entrar" %>
+          <div class="form-actions">
+            <%= f.button :submit, "Entrar" %>
 
-        </div>
-      <% end %>
-      <%= render "devise/shared/links" %>
-      <%= link_to "Volver", root_path %>
+          </div>
+        <% end %>
+      </div>
+      <div class="div">
+        <%= render "devise/shared/links" %>
+      </div>
+      <div class="div">
+        <%= link_to "Volver", root_path %>
+      </div>
     </div>
   </div>
 </div>
